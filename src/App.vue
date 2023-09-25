@@ -1,20 +1,33 @@
 <template>
-  <router-view />
+  <div class="bg-gray-100 h-full">
+    <header class="bg-white shadow-md h-16 flex justify-between items-stretch">
+      <router-link
+        :to="{ name: 'home' }"
+        class="inline-flex items-center h-full px-5"
+        >Home</router-link
+      >
+      <div class="flex items-center gap-1">
+        <router-link
+          to=""
+          class="inline-flex items-center transition-colors px-2 h-full hover:bg-purple-100"
+          >Search Meals</router-link
+        >
+        <router-link
+          to=""
+          class="inline-flex items-center transition-colors px-2 h-full hover:bg-purple-100"
+          >Meals By Letter</router-link
+        >
+        <router-link
+          to=""
+          class="inline-flex items-center transition-colors px-2 h-full hover:bg-purple-100"
+          >Meals By Ingredients</router-link
+        >
+      </div>
+    </header>
+    <main><router-view /></main>
+  </div>
 </template>
 
-<script setup></script>
+<script></script>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>

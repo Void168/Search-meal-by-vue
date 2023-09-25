@@ -6,7 +6,7 @@
       placeholder="Search for Meals"
     />
 
-    <div class="flex gap-4 mt-4 justify-center">
+    <div class="flex flex-wrap gap-4 mt-4 justify-center">
       <router-link
         :to="{ name: 'byLetter', params: { letter } }"
         v-for="letter of letters"
@@ -15,8 +15,6 @@
         <span class="text-xl letter">{{ letter }}</span>
       </router-link>
     </div>
-
-    <pre>{{ ingredients }}</pre>
   </div>
 </template>
 
@@ -34,7 +32,6 @@ onMounted(async () => {
   const response = await instance.get(
     `${import.meta.env.VITE_BASE_URL}/list.php?i=list`
   );
-  console.log(response.data);
   ingredients.value = response.data;
 });
 </script>
