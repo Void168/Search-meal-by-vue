@@ -31,5 +31,6 @@ const props = defineProps({
   strMeal: String,
   strYoutube: String,
   strMealThumb: String,
+  strSource: String,
 });
 </script>

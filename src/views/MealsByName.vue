@@ -18,6 +18,7 @@
           :strMeal="meal.strMeal"
           :strYoutube="meal.strYoutube"
           :strMealThumb="meal.strMealThumb"
+          :strSource="meal.strSource"
         ></CardMeal>
       </div>
     </div>
