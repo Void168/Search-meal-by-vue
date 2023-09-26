@@ -13,35 +13,12 @@
         :key="meal.idMeal"
         class="bg-white shadow-lg rounded-xl"
       >
-        <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
-          <img
-            :src="meal.strMealThumb"
-            :alt="strMeal"
-            class="rounded-t-xl w-full h-64 object-cover"
-          />
-        </router-link>
-        <div class="p-3">
-          <p class="font-semibold text-2xl">{{ meal.strMeal }}</p>
-          <p class="mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-            quis magnam voluptate quo.
-          </p>
-
-          <div class="mb-4 flex justify-between">
-            <a
-              href="meal.strYoutube"
-              target="_blank"
-              class="px-4 py-2 border-2 ring-2 ring-offset-2 ring-white border-white bg-rose-500 text-white rounded-lg font-semibold hover:border-rose-400 hover:bg-white hover:ring-rose-400 hover:text-rose-500 transition-colors duration-250"
-              >Youtube</a
-            >
-            <router-link
-              to="/"
-              class="px-4 py-2 border-2 ring-2 ring-offset-2 ring-white border-white bg-indigo-500 text-white rounded-lg font-semibold hover:border-indigo-400 hover:bg-white hover:ring-indigo-400 hover:text-indigo-500 transition-colors duration-250"
-            >
-              View
-            </router-link>
-          </div>
-        </div>
+        <CardMeal
+          :params="{ id: meal.idMeal }"
+          :strMeal="meal.strMeal"
+          :strYoutube="meal.strYoutube"
+          :strMealThumb="meal.strMealThumb"
+        ></CardMeal>
       </div>
     </div>
   </div>
@@ -51,6 +28,7 @@
 import { computed, onMounted, ref } from "vue";
 import store from "../store";
 import { useRoute } from "vue-router";
+import CardMeal from "../components/CardMeal.vue";
 
 const route = useRoute();
 const keyword = ref("");
