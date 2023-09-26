@@ -16,7 +16,7 @@
 
       <div class="mb-4 flex items-center justify-between">
         <YoutubeButton :href="strYoutube">Youtube</YoutubeButton>
-        <ViewButton :href="strYoutube">View</ViewButton>
+        <ViewButton :href="strSource">View</ViewButton>
       </div>
     </div>
   </div>
