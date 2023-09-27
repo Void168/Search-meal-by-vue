@@ -22,6 +22,12 @@
         ></CardMeal>
       </div>
     </div>
+    <div
+      v-if="!meals.length"
+      class="flex justify-center items-center text-gray-600"
+    >
+      <p class="text-3xl font-semibold">There are no meals</p>
+    </div>
   </div>
 </template>
 
@@ -36,7 +42,11 @@ const keyword = ref("");
 const meals = computed(() => store.state.searchedMeals);
 
 function searchMeals() {
-  store.dispatch("searchMeals", keyword.value);
+  if (keyword.value) {
+    store.dispatch("searchMeals", keyword.value);
+  } else {
+    store.commit("searchMeals", keyword.value);
+  }
 }
 
 onMounted(() => {

@@ -24,6 +24,12 @@
         ></CardMeal>
       </div>
     </div>
+    <div
+      v-if="!meals.length"
+      class="flex justify-center items-center text-gray-600"
+    >
+      <p class="text-3xl font-semibold">There are no meals</p>
+    </div>
   </div>
 </template>
 
